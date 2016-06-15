@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './App.css';
+import RenderNav from './Components/RenderNav.react.jsx'
 
 export default class App extends React.Component {
   constructor(props) {
@@ -8,9 +9,7 @@ export default class App extends React.Component {
   }
   render() {
     return (
-      <div className={styles.app}>
-        bar
-      </div>
+      <RenderNav />
     );
   }
 }
