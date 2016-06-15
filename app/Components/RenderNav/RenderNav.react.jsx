@@ -1,16 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import styles from './renderNav.scss';
-import AddNewBathroomForm from './Bathroom/AddNewBathroomForm.react.jsx'
+import styles from './style/renderNav.css';
+import AddNewBathroomForm from '../Bathroom/AddNewBathroomForm.react.jsx'
 
 export default class RenderNav extends React.Component {
+  constructor(props) {
+    super(props);
+  }
   render() {
     return (
-      <header className={styles.site_header}>
+      <header className={styles.siteHeader}>
 
         <a href="#0" className={styles.logo}>Tinge</a>
 
-        <nav className={styles.site_nav}>
+        <nav className={styles.siteNav}>
           <ul>
             <li className={styles.active}><a href="#0">Revenue</a></li>
             <li><a href="#0">Churn</a></li>
@@ -18,18 +21,13 @@ export default class RenderNav extends React.Component {
           </ul>
         </nav>
 
-        <div className={styles.account_actions}>
+        <div className={styles.accountActions}>
 
-          <div className={styles.account_dropdown}>
-            Gear
-            <ul>
+          <div className={styles.accountDropdown}>
+            Add A Bathroom
+            <ul className={styles.newBathroomForm}>
               <li>
-                Your Account
-                <ul className={styles.new_bathroom_form}>
-                  <li>
-                    <AddNewBathroomForm />
-                  </li>
-                </ul>
+                <AddNewBathroomForm />
               </li>
             </ul>
           </div>

@@ -5,17 +5,17 @@ body {
 }
 
 @media (max-width: 600px) {
-  .site_header {
+  .siteHeader {
     flex-wrap: wrap;
   }
-  .site_nav {
+  .siteNav {
     order: 2;
     background: #333;
     width: 100%;
   }
 }
 
-.site_header {
+.siteHeader {
   background: #0D1313;
   color: white;
   display: flex;
@@ -31,7 +31,7 @@ body {
   padding: 10px;
 }
 
-.site_nav {
+.siteNav {
   ul {
     list-style: none;
     display: flex;
@@ -54,21 +54,21 @@ body {
   }
 }
 
-.account_actions {
+.accountActions {
   margin-left: auto;
   display: flex;
   align-items: center;
   margin-right: 10px;
 }
 
-.account_dropdown {
+.accountDropdown {
   ul {
     // hide dropdown at first
     display: none;
   }
 }
 
-.sign_out_link {
+.signOutLink {
   color: #62DEBE;
   font-size: 0.8rem;
   margin-left: 10px;
