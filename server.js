@@ -3,6 +3,7 @@
 const path = require('path');
 const express = require('express');
 const webpack = require('webpack');
+const mongoose = require('mongoose');
 const webpackMiddleware = require('webpack-dev-middleware');
 const webpackHotMiddleware = require('webpack-hot-middleware');
 const config = require('./webpack.config.js');
@@ -32,6 +33,10 @@ if (isDeveloping) {
     res.write(middleware.fileSystem.readFileSync(path.join(__dirname, 'dist/index.html')));
     res.end();
   });
+
+  // Connect to our mongo database
+  mongoose.connect('mongodb://localhost/bathroom-db');
+
 } else {
   app.use(express.static(__dirname + '/dist'));
   app.get('*', function response(req, res) {
@@ -43,5 +48,5 @@ app.listen(port, '0.0.0.0', function onStart(err) {
   if (err) {
     console.log(err);
   }
-  console.info('==> 🌎 Listening on port %s. Open up http://0.0.0.0:%s/ in your browser.', port, port);
+  console.info('==> :) Listening on port %s. Open up http://0.0.0.0:%s/ in your browser.', port, port);
 });
